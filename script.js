@@ -87,8 +87,9 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe timeline items, project cards, and certificate cards
+// Observe elements for scroll reveal animations
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate timeline, projects, and certificates
     const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .certificate-card');
 
     animatedElements.forEach(el => {
@@ -96,6 +97,51 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+
+    // Animate section titles
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach(title => {
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(-20px)';
+        title.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(title);
+    });
+
+    // Animate about content
+    const aboutText = document.querySelector('.about-text');
+    if (aboutText) {
+        aboutText.style.opacity = '0';
+        aboutText.style.transform = 'translateY(30px)';
+        aboutText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(aboutText);
+    }
+
+    // Animate highlight items
+    const highlightItems = document.querySelectorAll('.highlight-item');
+    highlightItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+        observer.observe(item);
+    });
+
+    // Animate contact content
+    const contactContent = document.querySelector('.contact-content');
+    if (contactContent) {
+        contactContent.style.opacity = '0';
+        contactContent.style.transform = 'translateY(30px)';
+        contactContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(contactContent);
+    }
+
+    // Animate skills sections with stagger
+    const skillsSections = document.querySelectorAll('.skills-section');
+    skillsSections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateX(-20px)';
+        section.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+        observer.observe(section);
     });
 });
 
