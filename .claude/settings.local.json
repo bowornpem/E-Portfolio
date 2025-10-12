@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(done)"
+      "Bash(done)",
+      "Read(//Users/bowornpb/Documents/FutureSkill/FutureSkillCourseData/**)",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01SCA.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01AGP.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01FBA.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01LOA.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01AMC.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01JDO.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01SBI.jpg\")",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01AIM.jpg\")",
+      "Bash(find:*)",
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01CBN.jpg\")"
     ],
     "deny": [],
     "ask": []
