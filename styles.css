@@ -77,11 +77,27 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
     color: var(--accent-color);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -168,6 +184,12 @@ body {
     background-color: var(--bg-alt);
     border-radius: 8px;
     border-left: 3px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
 }
 
 .education-item strong {
@@ -204,6 +226,16 @@ body {
     border-radius: 50px;
     font-size: 0.9rem;
     color: var(--text-color);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
 /* Timeline */
@@ -227,6 +259,16 @@ body {
     position: relative;
     padding-left: 60px;
     margin-bottom: 3rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 8px rgba(52, 152, 219, 0.1);
 }
 
 .timeline-marker {
@@ -238,6 +280,7 @@ body {
     border-radius: 50%;
     background-color: var(--accent-color);
     border: 3px solid var(--bg-alt);
+    transition: all 0.3s ease;
 }
 
 .timeline-period {
@@ -294,6 +337,13 @@ body {
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.achievement-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 /* Highlights Gallery */
@@ -396,6 +446,13 @@ body {
     border-radius: 4px;
     font-size: 0.85rem;
     color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* Certificates Grid */
@@ -471,11 +528,29 @@ body {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
 }
 
 .contact-link:hover {
     color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.contact-link:hover::after {
+    width: 100%;
 }
 
 /* Footer */
@@ -484,10 +559,20 @@ body {
     color: white;
     text-align: center;
     padding: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+.footer:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .footer p {
     margin: 0;
+    transition: all 0.3s ease;
+}
+
+.footer:hover p {
+    transform: scale(1.02);
 }
 
 /* Theme Toggle Button */
