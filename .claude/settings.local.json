@@ -19,7 +19,8 @@
       "WebFetch(domain:github.com)",
       "Bash(curl:*)",
       "Bash(git ls-tree:*)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "Read(//Users/bowornpb/Desktop/**)"
     ],
     "deny": [],
     "ask": []
