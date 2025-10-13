@@ -204,3 +204,69 @@ backToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Image Lazy Loading with Skeleton Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+    // Add loading class to all lazy images initially
+    lazyImages.forEach(img => {
+        if (!img.complete) {
+            img.classList.add('loading');
+        }
+    });
+
+    // Image loading observer options
+    const imageObserverOptions = {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.01
+    };
+
+    // Create intersection observer for images
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+
+                // Only process if image hasn't loaded yet
+                if (!img.classList.contains('loaded')) {
+                    img.classList.add('loading');
+
+                    // When image loads, remove loading and add loaded class
+                    img.addEventListener('load', () => {
+                        img.classList.remove('loading');
+                        img.classList.add('loaded');
+                    }, { once: true });
+
+                    // Handle error case
+                    img.addEventListener('error', () => {
+                        img.classList.remove('loading');
+                        img.classList.add('loaded');
+                    }, { once: true });
+                }
+
+                // Stop observing this image
+                observer.unobserve(img);
+            }
+        });
+    }, imageObserverOptions);
+
+    // Observe all lazy images
+    lazyImages.forEach(img => {
+        // If image is already loaded (from cache), mark as loaded
+        if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+        } else {
+            imageObserver.observe(img);
+        }
+    });
+
+    // Handle images that load from cache before observer runs
+    lazyImages.forEach(img => {
+        if (img.complete) {
+            img.classList.remove('loading');
+            img.classList.add('loaded');
+        }
+    });
+});
