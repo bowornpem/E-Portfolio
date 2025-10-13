@@ -613,7 +613,7 @@ body {
 .course-cover {
     width: 100%;
     height: auto;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
     object-fit: contain;
     background-color: var(--bg-alt);
 }
