@@ -691,19 +691,33 @@ body {
 
 .article-card {
     background-color: var(--bg-color);
-    padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     border: 2px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .article-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-hover);
     border-color: var(--accent-color);
+}
+
+.article-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.article-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .article-header {
