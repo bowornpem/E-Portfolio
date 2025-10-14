@@ -12,7 +12,17 @@
       "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01SBI.jpg\")",
       "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01AIM.jpg\")",
       "Bash(find:*)",
-      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01CBN.jpg\")"
+      "Bash(xargs -I {} cp {} \"/Users/bowornpb/Documents/E-Portfolio/course-covers/01CBN.jpg\")",
+      "Bash(pip3 install:*)",
+      "Bash(for file in course-covers/01WAN1.jpg course-covers/01WAN2.jpg course-covers/01AMP.jpg course-covers/01CBN.jpg course-covers/01SCA.jpg)",
+      "Bash(do)",
+      "Bash(sips:*)",
+      "Bash(gh api:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"Processing $file...\")",
+      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-39B7DA79-81BA-4053-B524-EE08914645E0/**)",
+      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-27EB4369-6AC6-40D4-899F-C7822D875A13/**)",
+      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-147AFB47-77D5-447E-9223-85CFEAEE28BD/**)"
     ],
     "deny": [],
     "ask": []
