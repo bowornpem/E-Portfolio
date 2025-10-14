@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boworn Pemboon - Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+
+        .page-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        #portfolio-content {
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 25px;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .contact-bar a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .summary {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border-left: 3px solid #667eea;
+        }
+
+        .experience-item {
+            margin-bottom: 18px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 6px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .period {
+            font-size: 12px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .company {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .project-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #667eea;
+        }
+
+        .project-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .project-desc {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.95;
+        }
+
+        .education-item {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 30px auto;
+            display: block;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page-wrapper {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .download-button,
+            .back-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div id="portfolio-content">
+            <div class="header">
+                <div class="name">Boworn Pemboon</div>
+                <div class="title">Learning Designer | Curriculum Developer | EdTech Specialist</div>
+                <div class="contact-bar">
+                    <span>📧 boworn.pem@gmail.com</span>
+                    <span>📱 098-951-4797</span>
+                    <span>💼 <a href="https://www.linkedin.com/in/boworn-pemboon-309a98246/" target="_blank">linkedin.com/in/boworn-pemboon</a></span>
+                    <span>🌐 <a href="https://bowornpem.github.io/E-Portfolio/" target="_blank">bowornpem.github.io/E-Portfolio</a></span>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">46+</div>
+                    <div class="stat-label">Courses Designed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Students Reached</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Professional Summary</div>
+                <div class="summary">
+                    Education technology specialist with 6+ years of experience in curriculum development and instructional design. Expert in creating engaging learning experiences for all ages, with a strong focus on coding and digital education. Proven track record in project management, cross-functional collaboration, and implementing innovative educational solutions. Computer Science graduate from Chulalongkorn University with extensive experience designing 46+ online courses in AI, Data Analytics, Marketing, and DevOps.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Core Skills</div>
+                <div class="skills-grid">
+                    <div class="skill-item">Curriculum Design</div>
+                    <div class="skill-item">Instructional Design</div>
+                    <div class="skill-item">Project Management</div>
+                    <div class="skill-item">AI Tools (ChatGPT, Claude)</div>
+                    <div class="skill-item">Educational Technology</div>
+                    <div class="skill-item">Content Creation</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">UX Research</div>
+                    <div class="skill-item">Cross-functional Leadership</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Work Experience</div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Learning Designer</div>
+                        <div class="period">May 2024 - Present</div>
+                    </div>
+                    <div class="company">Like Me X Co.,Ltd. : FutureSkill</div>
+                    <ul>
+                        <li>Designed 46+ comprehensive online courses in AI, Data Analytics, Marketing, and DevOps</li>
+                        <li>Led Learner Expectation Optimization initiative, redesigning feedback collection system</li>
+                        <li>Spearheaded Assessment Standardization project implementing Bloom's Taxonomy</li>
+                        <li>Established Skill Taxonomy Architecture enabling personalized learning paths</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Curriculum Development Officer</div>
+                        <div class="period">Oct 2022 - Apr 2024</div>
+                    </div>
+                    <div class="company">Learn Corporation : Code Genius</div>
+                    <ul>
+                        <li>Designed age-appropriate robotics and coding courses for students ages 4+</li>
+                        <li>Created comprehensive 10th grade computer science curriculum for multiple schools</li>
+                        <li>Coordinated teaching initiatives with sales teams, schools, and parents</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Academic Officer (Coding)</div>
+                        <div class="period">Jan 2020 - Jul 2022</div>
+                    </div>
+                    <div class="company">Learn Corporation : Learn Education Co., Ltd.</div>
+                    <ul>
+                        <li>Authored textbooks and video lessons for grades 5-9 computer science courses</li>
+                        <li>Led Academic Web Center project centralizing teaching resources for educators</li>
+                        <li>Managed Good & Digital Citizenship project with Thai Media Fund</li>
+                        <li><strong>MVP Award Q1/2022 - Innovation Excellence</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Key Projects</div>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-title">Learner Expectation Optimization</div>
+                        <div class="project-desc">Redesigned B2C platform feedback system through UX research, improving feedback quality and response rates.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Assessment Standardization</div>
+                        <div class="project-desc">Led platform-wide test redesign applying Bloom's Taxonomy and Three Domains of Learning framework.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Skill Taxonomy Architecture</div>
+                        <div class="project-desc">Established comprehensive course categorization system for personalized learning recommendations.</div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Academic Web Center</div>
+                        <div class="project-desc">Built platform to centralize teaching resources for educators with user feedback analysis system.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                <div class="education-item">
+                    <span class="degree">Bachelor of Science in Computer Science</span><br>
+                    Faculty of Science, Chulalongkorn University (2018)
+                </div>
+            </div>
+        </div>
+
+        <button class="download-button" onclick="generatePDF()">📄 Download Portfolio as PDF</button>
+
+        <div class="back-link">
+            <a href="index.html">← Back to Full Portfolio</a>
+        </div>
+    </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('portfolio-content');
+            const opt = {
+                margin: 10,
+                filename: 'Boworn_Pemboon_Portfolio.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Show loading state
+            const button = document.querySelector('.download-button');
+            const originalText = button.innerHTML;
+            button.innerHTML = '⏳ Generating PDF...';
+            button.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                button.innerHTML = originalText;
+                button.disabled = false;
+            });
+        }
+    </script>
+</body>
+</html>
