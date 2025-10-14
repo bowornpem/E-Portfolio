@@ -35,33 +35,33 @@
 
         .header {
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #667eea;
-            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            margin-bottom: 12px;
         }
 
         .name {
-            font-size: 32px;
+            font-size: 24px;
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .title {
-            font-size: 18px;
+            font-size: 13px;
             color: #667eea;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
 
         .contact-bar {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
-            font-size: 13px;
+            font-size: 10px;
             color: #666;
-            margin-top: 12px;
+            margin-top: 6px;
         }
 
         .contact-bar a {
@@ -70,137 +70,137 @@
         }
 
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 20px;
+            font-size: 14px;
             font-weight: 700;
             color: #2c3e50;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 5px;
-            margin-bottom: 12px;
+            border-bottom: 1.5px solid #667eea;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .summary {
-            font-size: 14px;
-            line-height: 1.8;
+            font-size: 10px;
+            line-height: 1.4;
             color: #555;
             text-align: justify;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            font-size: 13px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            font-size: 9px;
         }
 
         .skill-item {
             background: #f8f9fa;
-            padding: 6px 10px;
-            border-radius: 4px;
-            border-left: 3px solid #667eea;
+            padding: 4px 6px;
+            border-radius: 3px;
+            border-left: 2px solid #667eea;
         }
 
         .experience-item {
-            margin-bottom: 18px;
+            margin-bottom: 10px;
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         .job-title {
-            font-size: 16px;
+            font-size: 11px;
             font-weight: 700;
             color: #2c3e50;
         }
 
         .period {
-            font-size: 12px;
+            font-size: 9px;
             color: #667eea;
             font-weight: 600;
         }
 
         .company {
-            font-size: 14px;
+            font-size: 10px;
             color: #666;
             font-style: italic;
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         .experience-item ul {
-            margin-left: 20px;
-            font-size: 13px;
+            margin-left: 15px;
+            font-size: 9px;
             color: #555;
         }
 
         .experience-item li {
-            margin-bottom: 4px;
-            line-height: 1.5;
+            margin-bottom: 2px;
+            line-height: 1.3;
         }
 
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 8px;
         }
 
         .project-item {
             background: #f8f9fa;
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 3px solid #667eea;
+            padding: 6px 8px;
+            border-radius: 4px;
+            border-left: 2px solid #667eea;
         }
 
         .project-title {
-            font-size: 14px;
+            font-size: 10px;
             font-weight: 700;
             color: #2c3e50;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .project-desc {
-            font-size: 12px;
+            font-size: 8px;
             color: #555;
-            line-height: 1.5;
+            line-height: 1.3;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .stat-item {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 8px;
+            border-radius: 6px;
             text-align: center;
         }
 
         .stat-number {
-            font-size: 28px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 9px;
             opacity: 0.95;
         }
 
         .education-item {
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 10px;
+            margin-bottom: 4px;
         }
 
         .degree {
@@ -252,12 +252,20 @@
             }
             .page-wrapper {
                 box-shadow: none;
-                padding: 20px;
+                padding: 10px;
+                max-width: 100%;
             }
             .download-button,
             .back-link {
                 display: none;
             }
+        }
+
+        /* Additional compact styling for PDF */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
     </style>
 </head>
@@ -293,7 +301,7 @@
             <div class="section">
                 <div class="section-title">Professional Summary</div>
                 <div class="summary">
-                    Education technology specialist with 6+ years of experience in curriculum development and instructional design. Expert in creating engaging learning experiences for all ages, with a strong focus on coding and digital education. Proven track record in project management, cross-functional collaboration, and implementing innovative educational solutions. Computer Science graduate from Chulalongkorn University with extensive experience designing 46+ online courses in AI, Data Analytics, Marketing, and DevOps.
+                    Education technology specialist with 6+ years in curriculum development and instructional design. Designed 46+ online courses in AI, Data Analytics, Marketing, and DevOps. Computer Science graduate from Chulalongkorn University with expertise in creating engaging learning experiences and implementing educational best practices.
                 </div>
             </div>
 
@@ -303,12 +311,15 @@
                     <div class="skill-item">Curriculum Design</div>
                     <div class="skill-item">Instructional Design</div>
                     <div class="skill-item">Project Management</div>
-                    <div class="skill-item">AI Tools (ChatGPT, Claude)</div>
-                    <div class="skill-item">Educational Technology</div>
+                    <div class="skill-item">AI Tools</div>
+                    <div class="skill-item">EdTech</div>
                     <div class="skill-item">Content Creation</div>
                     <div class="skill-item">Data Analysis</div>
                     <div class="skill-item">UX Research</div>
-                    <div class="skill-item">Cross-functional Leadership</div>
+                    <div class="skill-item">Cross-functional Collaboration</div>
+                    <div class="skill-item">Assessment Design</div>
+                    <div class="skill-item">Educational Standards</div>
+                    <div class="skill-item">System Architecture</div>
                 </div>
             </div>
 
@@ -322,10 +333,8 @@
                     </div>
                     <div class="company">Like Me X Co.,Ltd. : FutureSkill</div>
                     <ul>
-                        <li>Designed 46+ comprehensive online courses in AI, Data Analytics, Marketing, and DevOps</li>
-                        <li>Led Learner Expectation Optimization initiative, redesigning feedback collection system</li>
-                        <li>Spearheaded Assessment Standardization project implementing Bloom's Taxonomy</li>
-                        <li>Established Skill Taxonomy Architecture enabling personalized learning paths</li>
+                        <li>Designed 46+ online courses in AI, Data Analytics, Marketing, and DevOps</li>
+                        <li>Led Learner Expectation Optimization and Assessment Standardization initiatives</li>
                     </ul>
                 </div>
 
@@ -336,9 +345,7 @@
                     </div>
                     <div class="company">Learn Corporation : Code Genius</div>
                     <ul>
-                        <li>Designed age-appropriate robotics and coding courses for students ages 4+</li>
-                        <li>Created comprehensive 10th grade computer science curriculum for multiple schools</li>
-                        <li>Coordinated teaching initiatives with sales teams, schools, and parents</li>
+                        <li>Designed robotics and coding courses for students ages 4+ and 10th grade CS curriculum</li>
                     </ul>
                 </div>
 
@@ -349,9 +356,7 @@
                     </div>
                     <div class="company">Learn Corporation : Learn Education Co., Ltd.</div>
                     <ul>
-                        <li>Authored textbooks and video lessons for grades 5-9 computer science courses</li>
-                        <li>Led Academic Web Center project centralizing teaching resources for educators</li>
-                        <li>Managed Good & Digital Citizenship project with Thai Media Fund</li>
+                        <li>Authored textbooks and video lessons for grades 5-9 computer science</li>
                         <li><strong>MVP Award Q1/2022 - Innovation Excellence</strong></li>
                     </ul>
                 </div>
@@ -362,19 +367,19 @@
                 <div class="projects-grid">
                     <div class="project-item">
                         <div class="project-title">Learner Expectation Optimization</div>
-                        <div class="project-desc">Redesigned B2C platform feedback system through UX research, improving feedback quality and response rates.</div>
+                        <div class="project-desc">Redesigned B2C feedback system through UX research, improving quality and response rates.</div>
                     </div>
                     <div class="project-item">
                         <div class="project-title">Assessment Standardization</div>
-                        <div class="project-desc">Led platform-wide test redesign applying Bloom's Taxonomy and Three Domains of Learning framework.</div>
+                        <div class="project-desc">Platform-wide test redesign using Bloom's Taxonomy and Three Domains of Learning.</div>
                     </div>
                     <div class="project-item">
                         <div class="project-title">Skill Taxonomy Architecture</div>
-                        <div class="project-desc">Established comprehensive course categorization system for personalized learning recommendations.</div>
+                        <div class="project-desc">Comprehensive course categorization system for personalized recommendations.</div>
                     </div>
                     <div class="project-item">
                         <div class="project-title">Academic Web Center</div>
-                        <div class="project-desc">Built platform to centralize teaching resources for educators with user feedback analysis system.</div>
+                        <div class="project-desc">Platform centralizing teaching resources with feedback analysis system.</div>
                     </div>
                 </div>
             </div>
@@ -399,10 +404,10 @@
         function generatePDF() {
             const element = document.getElementById('portfolio-content');
             const opt = {
-                margin: 10,
+                margin: [8, 8, 8, 8],
                 filename: 'Boworn_Pemboon_Portfolio.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true },
+                html2canvas: { scale: 2.5, useCORS: true, letterRendering: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
