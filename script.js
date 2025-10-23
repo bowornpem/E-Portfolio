@@ -1,3 +1,14 @@
+// Google Analytics Event Tracking Helper
+function trackEvent(eventName, category, label, value) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', eventName, {
+            'event_category': category,
+            'event_label': label,
+            'value': value
+        });
+    }
+}
+
 // Tab Navigation System
 const tabLinks = document.querySelectorAll('.tab-link');
 const tabContents = document.querySelectorAll('.tab-content');
@@ -24,6 +35,9 @@ function switchTab(tabName) {
     if (activeLink) {
         activeLink.classList.add('active');
     }
+
+    // Track tab navigation
+    trackEvent('tab_navigation', 'Navigation', tabName);
 
     // Scroll to top when switching tabs
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -70,6 +84,9 @@ themeToggle.addEventListener('click', () => {
 
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+
+    // Track theme toggle
+    trackEvent('theme_toggle', 'User Preferences', newTheme);
 });
 
 // Smooth scrolling for navigation links
@@ -297,6 +314,9 @@ backToTopButton.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
+
+    // Track back to top click
+    trackEvent('back_to_top', 'Navigation', 'Back to Top Button');
 });
 
 // Animated Statistics Counter
@@ -428,5 +448,110 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('mouseleave', () => {
             card.style.transform = '';
         });
+    });
+});
+
+// Analytics Event Tracking for User Interactions
+document.addEventListener('DOMContentLoaded', () => {
+    // Track Hero CTA button clicks
+    const heroCTA = document.querySelector('.hero-cta');
+    if (heroCTA) {
+        heroCTA.querySelectorAll('a').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const btnText = btn.textContent.trim();
+                const href = btn.getAttribute('href');
+
+                if (href.includes('.pdf')) {
+                    trackEvent('download', 'CTA', 'Resume Download - Hero');
+                } else if (href.includes('portfolio-pdf')) {
+                    trackEvent('click', 'CTA', 'Portfolio PDF - Hero');
+                } else if (href.includes('linkedin')) {
+                    trackEvent('click', 'CTA', 'LinkedIn - Hero');
+                } else if (href.includes('#contact')) {
+                    trackEvent('click', 'CTA', 'Contact - Hero');
+                }
+            });
+        });
+    }
+
+    // Track all PDF downloads
+    document.querySelectorAll('a[href$=".pdf"], a[download]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const fileName = link.getAttribute('href') || 'Unknown PDF';
+            const linkText = link.textContent.trim() || fileName;
+            trackEvent('download', 'PDF', linkText);
+        });
+    });
+
+    // Track external links (LinkedIn, social media, etc.)
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const url = link.getAttribute('href');
+            const linkText = link.textContent.trim();
+
+            if (url.includes('linkedin.com')) {
+                trackEvent('click', 'External Link', 'LinkedIn - ' + linkText);
+            } else if (url.includes('portfolio-pdf')) {
+                trackEvent('click', 'External Link', 'Portfolio PDF - ' + linkText);
+            } else {
+                trackEvent('click', 'External Link', linkText || url);
+            }
+        });
+    });
+
+    // Track email clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const email = link.getAttribute('href').replace('mailto:', '');
+            trackEvent('click', 'Contact', 'Email - ' + email);
+        });
+    });
+
+    // Track phone clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const phone = link.getAttribute('href').replace('tel:', '');
+            trackEvent('click', 'Contact', 'Phone - ' + phone);
+        });
+    });
+
+    // Track hamburger menu clicks
+    const hamburger = document.getElementById('hamburger');
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.contains('active');
+            trackEvent('click', 'Navigation', 'Mobile Menu ' + (isActive ? 'Close' : 'Open'));
+        });
+    }
+
+    // Track certificate card clicks
+    document.querySelectorAll('.certificate-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const certTitle = card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : 'Unknown Certificate';
+            trackEvent('click', 'Certificate', certTitle);
+        });
+    });
+
+    // Track article/writing card clicks
+    document.querySelectorAll('.article-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const articleTitle = card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : 'Unknown Article';
+            trackEvent('click', 'Content', articleTitle);
+        });
+    });
+
+    // Track course card views (optional - for hover or scroll into view)
+    const courseObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('tracked')) {
+                entry.target.classList.add('tracked');
+                const courseTitle = entry.target.querySelector('h3') ? entry.target.querySelector('h3').textContent.trim() : 'Unknown Course';
+                trackEvent('view', 'Course', courseTitle);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.course-card').forEach(card => {
+        courseObserver.observe(card);
     });
 });
