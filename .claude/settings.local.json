@@ -22,7 +22,8 @@
       "Bash(do echo \"Processing $file...\")",
       "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-39B7DA79-81BA-4053-B524-EE08914645E0/**)",
       "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-27EB4369-6AC6-40D4-899F-C7822D875A13/**)",
-      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-147AFB47-77D5-447E-9223-85CFEAEE28BD/**)"
+      "Read(//Users/bowornpb/Library/Containers/com.aptonic.Dropzone4/Data/Library/Application Support/Dropzone/Promised Files/DzFilePromise-147AFB47-77D5-447E-9223-85CFEAEE28BD/**)",
+      "Bash(xargs:*)"
     ],
     "deny": [],
     "ask": []
