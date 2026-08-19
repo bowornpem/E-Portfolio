@@ -331,7 +331,24 @@ body {
 }
 
 .about-text > p {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.about-text .core-areas-title {
+    margin-bottom: 0.5rem;
+}
+
+.about-text .core-areas-list {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.about-text .core-areas-list li {
+    margin-bottom: 0.35rem;
+}
+
+.about-text .core-areas-list li:last-child {
+    margin-bottom: 0;
 }
 
 .education-item {
