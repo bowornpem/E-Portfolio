@@ -1,0 +1,73 @@
+{
+  "title": "เลือกโลกภาพสำหรับ Portfolio ใหม่",
+  "question": "เลือกทิศทางที่ควรเป็นแกนของการ redesign หรือสั่งให้สุ่มชุดใหม่ได้",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Dawn Evidence Atlas",
+      "kicker": "THE ROLL",
+      "lineage": "editorial field atlas and photographic contact sheets",
+      "thesis": "Portfolio ที่เรียงหลักฐานการเรียนรู้และการพัฒนาโครงการเหมือน dossier ที่ผ่านการคัดสรรอย่างตั้งใจ",
+      "palette": ["#577BA5", "#A8C1D5", "#F5C0BD", "#F8E6E0", "#203547"],
+      "materials": ["blue-hour paper", "real workshop photography", "quiet peach annotation marks"],
+      "viewport": "ชื่อและบทบาทอยู่บนพื้นที่ท้องฟ้า blue-hour ที่สงบ ข้างหลักฐานเด่น 3 ชิ้นซึ่งทำหน้าที่เป็นทางเข้าสู่ประวัติและผลงาน",
+      "risk": "ต้องรักษาจังหวะและพื้นที่ว่างให้จริงจัง มิฉะนั้นจะกลับไปเป็น portfolio card grid ทั่วไป",
+      "raised": [
+        {"from": "Cloud Quarry", "raise": "ใช้ความลึกและจังหวะของชั้นบรรยากาศเพื่อแบ่งเนื้อหาหนาแน่นออกเป็นช่วงอ่านง่าย โดยไม่ใช้เอฟเฟกต์แฟนตาซี"},
+        {"from": "Hand-pieced Quilt", "raise": "ทุกผลงานระบุบริบท บทบาท และผลลัพธ์อย่างมี provenance แทนการเป็นเพียงภาพประกอบ"}
+      ],
+      "comp": ".impeccable/mocks/decision/dawn-evidence-atlas.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "The Working Portfolio",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "modern editorial project folios and case-study reports",
+      "thesis": "หน้าเว็บทำงานเหมือนรายงานผลงานที่อ่านเร็ว: ข้อเท็จจริงก่อน รายละเอียดตามต้องการ",
+      "palette": ["#2D4960", "#90ABC2", "#F1B8B3", "#FFF9F5"],
+      "materials": ["editorial columns", "proof captions", "full-bleed real images"],
+      "viewport": "บทนำสองคอลัมน์พาผู้ชมจากประวัติย่อไปยังผลงานเด่นโดยมีตัวเลขและภาพจริงเป็นหลักฐาน",
+      "risk": "ชัดเจนและใช้งานง่าย แต่เป็นภาษาที่คุ้นเคยที่สุดในกลุ่มตัวเลือก",
+      "comp": ".impeccable/mocks/decision/working-portfolio.png"
+    },
+    {
+      "id": "challenger-cloud-quarry",
+      "label": "Cloud Strata",
+      "verdict": "competitive",
+      "lineage": "weather maps and atmospheric strata",
+      "thesis": "งานแต่ละช่วงเป็นชั้นบรรยากาศที่ผู้ชมค่อย ๆ เปิดดูจากประวัติไปสู่หลักฐาน",
+      "palette": ["#5D80A9", "#AFC8D7", "#F6B7B1", "#FBE6DF"],
+      "materials": ["atmospheric photography", "layered editorial bands", "thin observation rules"],
+      "viewport": "ข้อมูลเปิดเป็นชั้นแนวนอนคล้าย horizon โดยภาพ workshop จริงเป็นจุดยึดสายตา ไม่ใช่ภาพ cloud ที่สร้างขึ้น",
+      "case": "สอดคล้องกับสีจากภาพแนบและสร้างลำดับการเล่าเรื่องได้ดี แต่เสี่ยงทำให้เนื้อหาดูเป็น concept มากกว่าหลักฐาน",
+      "risk": "ต้องไม่เปลี่ยน portfolio ให้กลายเป็นเว็บไซต์สภาพอากาศ",
+      "comp": ".impeccable/mocks/decision/cloud-strata.png"
+    },
+    {
+      "id": "challenger-quilt",
+      "label": "Learning Quilt",
+      "verdict": "declined",
+      "lineage": "hand-pieced quilt atlas",
+      "thesis": "ทุกประสบการณ์เป็นชิ้นส่วนที่เย็บเข้ากับเส้นทางอาชีพเดียวกัน",
+      "palette": ["#6D8FAE", "#F2BBB5", "#2E3E4D", "#FCF4EF"],
+      "materials": ["fabric patches", "thread lines", "provenance labels"],
+      "viewport": "ปะติดปะต่อหลักฐานเป็นไทม์ไลน์ที่มี label กำกับ",
+      "case": "ถือเรื่องราวและ provenance ได้ดี แต่ความเป็นงาน craft เบี่ยงจากความชัดเจนระดับมืออาชีพของ Learning & Project Development",
+      "kept": "การเล่าความต่อเนื่องของหลักฐาน พร้อม label ที่อ่านง่าย",
+      "risk": "อาจทำให้งานดูเป็นงานอดิเรกมากกว่าผลงานเชิงวิชาชีพ",
+      "comp": ".impeccable/mocks/decision/learning-quilt.webp"
+    }],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "Portfolio แบบ modern professional ที่ใช้ hero, card grid และ CTA ตามมาตรฐาน",
+    "palette": ["#FFFFFF", "#1F2937", "#2563EB"],
+    "materials": ["clean grid", "project cards"],
+    "viewport": "การจัดวางที่ผู้เข้าชมคุ้นเคยและเข้าใจทันที",
+    "risk": "มีโอกาสกลับไปดูเหมือน portfolio ที่สร้างด้วย template",
+    "comp": ".impeccable/mocks/decision/category-standard.png"
+  },
+  "steer": true
+}
